@@ -1,0 +1,103 @@
+\documentclass[10pt]{article}
+\usepackage[USenglish]{babel}
+\usepackage[useregional]{datetime2}
+\usepackage{lipsum}
+\DTMlangsetup[en-US]{showdayofmonth=false}
+
+\newcommand{\rfcId}{I-D}
+\newcommand{\rfcTitle}{RFC Title}
+\newcommand{\rfcAuthor}{Author}
+\newcommand{\rfcDate}{\today}
+\newcommand{\rfcInstitution}{Institution}
+
+% TABLE OF CONTENT
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\contentsname}{Table of Content}
+
+% MARGINS
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+\usepackage{geometry} 
+\geometry{
+	a4paper,
+	left=30mm,
+	top=30mm,
+	bottom=30mm,
+	right=30mm
+}
+\setlength{\leftskip}{17pt}
+
+% HEADER AND FOOTER
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{RFC \rfcId}
+\fancyhead[C]{\rfcTitle}
+\fancyhead[R]{\rfcDate}
+\fancyfoot[L]{\rfcAuthor} 
+\fancyfoot[C]{Standards Track} 
+\fancyfoot[R]{[Page \thepage] \\} 
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\setlength{\headheight}{13.6pt}
+
+% FIRST PAGE
+\usepackage{multicol}
+
+% FONT
+\usepackage{inconsolata}
+\renewcommand{\familydefault}{\ttdefault}
+
+\begin{document}
+
+\begin{multicols}{2}
+	\begin{flushleft}
+		Internet Engineering Task Force \\
+		INTERNET-DRAFT \rfcId
+	\end{flushleft}
+\columnbreak
+	\begin{flushright}
+		\rfcAuthor \\
+		\rfcInstitution \\
+		\rfcDate
+	\end{flushright}
+\end{multicols}
+
+\vspace{1in} { \center \rfcTitle \\ } \vspace{1in}
+
+\begin{abstract}
+	\lipsum[1]
+\end{abstract}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\section{Introduction}{
+    \lipsum[2]
+
+	\subsection{Goals}{
+		\lipsum[3]
+	}
+}
+\pagebreak
+
+\section{Terminology}{
+	In this document, the key words "MUST", "MUST NOT", "REQUIRED",
+	"SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
+	and "OPTIONAL" are to be interpreted as described in BCP 14, RFC 2119   [RFC2119].
+	
+	\paragraph{stuff} Todo
+}
+\pagebreak
+
+\section{Overview}{
+	\lipsum[4]
+}
+
+\end{document}
